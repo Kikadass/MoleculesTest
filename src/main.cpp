@@ -200,7 +200,76 @@ vector<Molecule> RunOperation(const Search& search, const u_int& parameter, cons
     return vector<Molecule>{};
 }
 
+u_int SelectSetOperation()
+{
+    while (true){
+        cout << "Please select a set operation to do with the previous two tables:" << endl;
+        cout << "1. Union" << endl;
+        cout << "2. Difference" << endl;
+        cout << "3. Symmetric Difference" << endl;
+        cout << "4. Intersection" << endl;
 
+        string input;
+        cin >> input;
+
+        if (isNumber(input))
+        {
+            u_int operation = std::stoi(input);
+
+            if (operation >= 1u && operation <= 5u)
+            {
+                return operation;
+            }
+        }
+    }
+}
+
+vector<Molecule> RunSetOperation(const vector<Molecule>& molecules1, const vector<Molecule>& molecules2)
+{
+    vector<Molecule> result;
+    switch (SelectSetOperation())
+    {
+    case 1u:
+        set_union(molecules1.begin(), molecules1.end(),
+                  molecules2.begin(), molecules2.end(),
+                  std::back_inserter(result));
+        break;
+    case 2u:
+        set_difference(molecules1.begin(), molecules1.end(),
+                       molecules2.begin(), molecules2.end(),
+                       std::back_inserter(result));
+        break;
+    case 3u:
+        set_symmetric_difference(molecules1.begin(), molecules1.end(),
+                                 molecules2.begin(), molecules2.end(),
+                                 std::back_inserter(result));
+        break;
+    case 4u:
+        set_intersection(molecules1.begin(), molecules1.end(),
+                         molecules2.begin(), molecules2.end(),
+                         std::back_inserter(result));
+        break;
+    default:
+        cout << "ERROR: INVALID OPERATION!" << endl;
+        result = molecules1;
+        break;
+    }
+
+    DisplayResults(result);
+
+    return result;
+}
+
+
+vector<Molecule> CreateTable(const Search& search)
+{
+    u_int parameter = SelectParameter();
+    u_int operation = SelectOperation(parameter);
+    const auto molecules = RunOperation(search, parameter, operation);
+    DisplayResults(molecules);
+
+    return molecules;
+}
 
 int main ()
 {
@@ -222,22 +291,21 @@ int main ()
         return 1;
     }
 
-    //do {
-    u_int parameter = SelectParameter();
-    u_int operation = SelectOperation(parameter);
-    const auto molecules = RunOperation(search, parameter, operation);
-    DisplayResults(molecules);
+    vector<Molecule> molecules1 = CreateTable(search);
 
-    //} while ();
+    while (true)
+    {
+    cout << "Do you want to do another operation? (Yes / No)" << endl;
+    cin >> input;
 
-/*
-    std::vector<Molecule> v_intersection;
+    if (input[0] == 'N' || input[0] == 'n')
+    {
+        return 0;
+    }
 
-    std::set_symmetric_difference(molecules.begin(), molecules.end(),
-                   molecules2.begin(), molecules2.end(),
-                   std::back_inserter(v_intersection));
+    vector<Molecule> molecules2 = CreateTable(search);
+    molecules1 = RunSetOperation(molecules1, molecules2);
+    }
 
-    DisplayResults(v_intersection);
-*/
     return 0;
 }
