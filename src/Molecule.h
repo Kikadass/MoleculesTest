@@ -8,9 +8,9 @@
 
 struct Molecule
 {
-    const std::string name;
-    const double solubility;
-    const u_int molecularWeight;
+    std::string name;
+    double solubility;
+    u_int molecularWeight;
 
     bool operator== (const Molecule& m) const
     {
@@ -27,5 +27,12 @@ struct Molecule
     bool operator< (const Molecule& m) const
     {
         return name < m.name;
+    }
+
+    friend void swap(Molecule& a, Molecule& b)
+    {
+        std::swap(a.name, b.name);
+        std::swap(a.solubility, b.solubility);
+        std::swap(a.molecularWeight, b.molecularWeight);
     }
 };

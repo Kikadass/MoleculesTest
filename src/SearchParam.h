@@ -47,4 +47,3 @@ class search_param<u_int>
             return m.molecularWeight;
         }
 };
-

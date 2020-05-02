@@ -30,17 +30,22 @@ Search::Search(std::string loadLocation)
         m_molecules.push_back(Molecule{name, solubility, molecularWeight});
     }
 
-    cout << "Molecules Loaded!" << endl;
+    std::sort(m_molecules.begin(), m_molecules.end());
+
+    cout << "Molecules Loaded!" << endl << endl;
 }
 
-void Search::DisplayResults(const std::vector<Molecule>& molecules) const
+const std::vector<Molecule> Search::SubStringSearch(const string& str) const
 {
-    cout << "RESULTS:" << endl;
-    cout << "NAME:\t\t" << "SOLUBILITY:\t" << "MOLECULAR WEIGHT:" << endl;
+    std::vector<Molecule> result;
 
-    for (const auto& molecule : molecules)
+    for (const Molecule& molecule : m_molecules)
     {
-        cout << molecule.name << "\t" << molecule.solubility << "\t\t" << molecule.molecularWeight << endl;
+        if (molecule.name.find(str) != std::string::npos)
+        {
+            result.push_back(molecule);
+        }
     }
-}
 
+    return result;
+}

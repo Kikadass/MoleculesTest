@@ -23,7 +23,7 @@ class Search
         {return m_molecules;};
 
         template<typename T>
-        const std::vector<Molecule> NumericSearch(const T reference,
+        const std::vector<Molecule> ParameterSearch(const T reference,
                                                   const std::function<bool(T, T)> comparison) const
         {
             std::vector<Molecule> result;
@@ -40,7 +40,7 @@ class Search
             return result;
         }
 
-        void DisplayResults(const std::vector<Molecule>& molecules) const;
+        const std::vector<Molecule> SubStringSearch(const string& str) const;
 
     private:
         std::vector<Molecule> m_molecules;
