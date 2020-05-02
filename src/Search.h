@@ -7,17 +7,12 @@
 #include <iostream>
 #include <vector>
 
+#include "Molecule.h"
+#include "SearchParam.h"
 #include "../nlohmann/json.hpp"
 
 using namespace std;
 using json = nlohmann::json;
-
-struct Molecule
-{
-    const std::string name;
-    const double solubility;
-    const u_int molecularWeight;
-};
 
 class Search
 {
@@ -28,28 +23,15 @@ class Search
         {return m_molecules;};
 
         template<typename T>
-        const std::vector<Molecule> NumericSearch(const u_int parameterNum,
-                                                  const T reference,
+        const std::vector<Molecule> NumericSearch(const T reference,
                                                   const std::function<bool(T, T)> comparison) const
         {
             std::vector<Molecule> result;
 
             for (const Molecule& molecule : m_molecules)
             {
-                T paramValue;
-                switch (parameterNum)
-                {
-                case 0u:
-                    paramValue = molecule.solubility;
-                    break;
-                case 1u:
-                    paramValue = molecule.molecularWeight;
-                    break;
-                default:
-                    break;
-                }
-
-                if (comparison(paramValue, reference))
+                auto value = search_param<T>::param(molecule);
+                if (comparison(value, reference))
                 {
                     result.push_back(molecule);
                 }

@@ -282,6 +282,10 @@ vector
 utility
 -
 
+/Users/kikepieraserra/GitHub/MoleculesTest/src/Molecule.h
+iostream
+-
+
 /Users/kikepieraserra/GitHub/MoleculesTest/src/Search.cpp
 Search.h
 /Users/kikepieraserra/GitHub/MoleculesTest/src/Search.h
@@ -293,8 +297,18 @@ iostream
 -
 vector
 -
+Molecule.h
+/Users/kikepieraserra/GitHub/MoleculesTest/src/Molecule.h
+SearchParam.h
+/Users/kikepieraserra/GitHub/MoleculesTest/src/SearchParam.h
 ../nlohmann/json.hpp
 /Users/kikepieraserra/GitHub/MoleculesTest/nlohmann/json.hpp
+
+/Users/kikepieraserra/GitHub/MoleculesTest/src/SearchParam.h
+iostream
+-
+Molecule.h
+/Users/kikepieraserra/GitHub/MoleculesTest/src/Molecule.h
 
 /Users/kikepieraserra/GitHub/MoleculesTest/src/main.cpp
 iostream
