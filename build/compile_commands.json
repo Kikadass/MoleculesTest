@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/Users/kikepieraserra/GitHub/MoleculesTest/build/src",
+  "command": "/usr/bin/clang++    -framework CoreFoundation -framework ApplicationServices -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++11 -o CMakeFiles/MoleculesTest.dir/main.cpp.o -c /Users/kikepieraserra/GitHub/MoleculesTest/src/main.cpp",
+  "file": "/Users/kikepieraserra/GitHub/MoleculesTest/src/main.cpp"
+},
+{
+  "directory": "/Users/kikepieraserra/GitHub/MoleculesTest/build/src",
+  "command": "/usr/bin/clang++    -framework CoreFoundation -framework ApplicationServices -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk   -std=gnu++11 -o CMakeFiles/MoleculesTest.dir/Search.cpp.o -c /Users/kikepieraserra/GitHub/MoleculesTest/src/Search.cpp",
+  "file": "/Users/kikepieraserra/GitHub/MoleculesTest/src/Search.cpp"
+}
+]

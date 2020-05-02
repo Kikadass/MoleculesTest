@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/kikepieraserra/GitHub/MoleculesTest/src/main.cpp
+stdio.h
+/Users/kikepieraserra/GitHub/MoleculesTest/src/stdio.h
+

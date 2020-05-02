@@ -1,0 +1,24 @@
+{
+    "Molecules": [
+        {
+            "name": "Paracetamol",
+            "solubility": 4.97,
+            "molecularWeight": 151
+        },
+        {
+            "name": "Caffeine",
+            "solubility": 5.05,
+            "molecularWeight": 194
+        },
+        {
+            "name": "Indomethacin",
+            "solubility": 0.4,
+            "molecularWeight": 358
+        },
+        {
+            "name": "Trimethoprim",
+            "solubility": 3.14,
+            "molecularWeight": 290
+        }
+    ]
+}

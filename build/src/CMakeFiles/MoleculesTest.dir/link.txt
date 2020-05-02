@@ -1,0 +1,1 @@
+/usr/bin/clang++   -framework CoreFoundation -framework ApplicationServices -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/MoleculesTest.dir/main.cpp.o CMakeFiles/MoleculesTest.dir/Search.cpp.o  -o MoleculesTest  
