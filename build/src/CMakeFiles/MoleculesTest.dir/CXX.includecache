@@ -310,9 +310,17 @@ iostream
 Molecule.h
 /Users/kikepieraserra/GitHub/MoleculesTest/src/Molecule.h
 
+/Users/kikepieraserra/GitHub/MoleculesTest/src/Utils.cpp
+iostream
+-
+Search.h
+/Users/kikepieraserra/GitHub/MoleculesTest/src/Search.h
+
 /Users/kikepieraserra/GitHub/MoleculesTest/src/main.cpp
 iostream
 -
 Search.h
 /Users/kikepieraserra/GitHub/MoleculesTest/src/Search.h
+Utils.cpp
+/Users/kikepieraserra/GitHub/MoleculesTest/src/Utils.cpp
 

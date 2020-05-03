@@ -11,7 +11,6 @@
 #include "SearchParam.h"
 #include "../nlohmann/json.hpp"
 
-using namespace std;
 using json = nlohmann::json;
 
 class Search
@@ -24,12 +23,13 @@ class Search
 
         template<typename T>
         const std::vector<Molecule> ParameterSearch(const T reference,
-                                                  const std::function<bool(T, T)> comparison) const
+                                                    const std::function<bool(T, T)> comparison) const
         {
             std::vector<Molecule> result;
 
             for (const Molecule& molecule : m_molecules)
             {
+                // Get parameter of molecule needed in this search.
                 auto value = search_param<T>::param(molecule);
                 if (comparison(value, reference))
                 {
@@ -40,7 +40,7 @@ class Search
             return result;
         }
 
-        const std::vector<Molecule> SubStringSearch(const string& str) const;
+        const std::vector<Molecule> SubStringSearch(const std::string& str) const;
 
     private:
         std::vector<Molecule> m_molecules;

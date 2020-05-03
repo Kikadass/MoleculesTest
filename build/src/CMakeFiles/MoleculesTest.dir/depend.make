@@ -11,5 +11,6 @@ src/CMakeFiles/MoleculesTest.dir/main.cpp.o: ../nlohmann/json.hpp
 src/CMakeFiles/MoleculesTest.dir/main.cpp.o: ../src/Molecule.h
 src/CMakeFiles/MoleculesTest.dir/main.cpp.o: ../src/Search.h
 src/CMakeFiles/MoleculesTest.dir/main.cpp.o: ../src/SearchParam.h
+src/CMakeFiles/MoleculesTest.dir/main.cpp.o: ../src/Utils.cpp
 src/CMakeFiles/MoleculesTest.dir/main.cpp.o: ../src/main.cpp
 

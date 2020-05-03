@@ -9,6 +9,7 @@
 
 template<typename T> class AssertHelper : public std::false_type {};
 
+// Base trait class
 template<typename T>
 class search_param
 {
@@ -18,6 +19,7 @@ class search_param
         static T param (const Molecule&);
 };
 
+// search_param specialization for std::string (name searches)
 template<>
 class search_param<std::string>
 {
@@ -28,6 +30,7 @@ class search_param<std::string>
         }
 };
 
+// search_param specialization for double (Solubility searches)
 template<>
 class search_param<double>
 {
@@ -38,6 +41,7 @@ class search_param<double>
         }
 };
 
+// search_param specialization for u_int (molecular weight searches)
 template<>
 class search_param<u_int>
 {
